@@ -1,7 +1,7 @@
 import six
 from google.cloud import translate_v2 as translate
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "chatbot-324803-1209b8da248f.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "chatbot-324803-1209b8da248f.json"
 
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\\Users\\356286\\Desktop\\chatbotfinal\\mafil-aidujv-25a0238a560c.json"
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\\Users\\grep\\Desktop\\flaskProject\\mafil-aidujv-25a0238a560c.json"

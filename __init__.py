@@ -15,12 +15,12 @@ from nextActionService import nextAction
 from otherVerticlesNextActionService import otherVerticalnextAction
 from NlpController import get_response_from_dialogflow, create_response_from_nlp
 from Models import ChatLogs, SessionData, ChatContexts, GlInquiry, Branchs, OvInquiry,CBInquiry,Complaints
-
+#
 # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C://App//flaskProject//mafil-aidujv-aidujv-25a0238a560c.json"
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\\Users\\grep\\Desktop\\flaskProject\\mafil-aidujv-25a0238a560c.json"
 # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\\Users\\356286\\Desktop\\chatbotfinal\\mafil-aidujv-25a0238a560c.json"
 #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\\Users\\356286\\PycharmProjects\\chatbot\\mafil-aidujv-25a0238a560c.json"
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "chatbot-324803-1209b8da248f.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "chatbot-324803-1209b8da248f.json"
 
 wsdl = "https://online.manappuram.com/custbot/custbot.asmx?WSDL"
 client = zeep.Client(wsdl=wsdl)
