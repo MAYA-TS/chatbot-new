@@ -1,0 +1,330 @@
+<html>
+
+<head>
+    <style>
+        .speech {
+            border: 1px solid #DDD;
+            width: 300px;
+            padding: 0;
+            margin: 0
+        }
+
+        .speech input {
+            border: 0;
+            width: 240px;
+            display: inline-block;
+            height: 30px;
+        }
+
+        .speech img {
+            float: right;
+            width: 40px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+        /* Added New Slideshow container */
+
+        .slideshow-container {
+           max-width: 1000px;
+           margin: auto;
+           z-index: 1000;
+           position: relative;
+           box-shadow: 0px 5px 8px #00000017;
+        }
+        /* Hide the images by default */
+
+        .mySlides {
+            display: none;
+        }
+        /* Next & previous buttons */
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -28px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+
+        .prev:hover,
+        .next:hover {
+            background-color: transparent;
+        }
+        /* Caption text */
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .banner-smll {
+            width: 100%;
+            height: 40px;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+        /* Fading animation */
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* Added New Slideshow container END */
+    </style>
+
+    <script charset='UTF-8'>
+        window['adrum-start-time'] = new Date().getTime();
+        (function(config) {
+            config.appKey = 'AD-AAB-AAW-KFC';
+            config.adrumExtUrlHttp = 'http://cdn.appdynamics.com';
+            config.adrumExtUrlHttps = 'https://cdn.appdynamics.com';
+            config.beaconUrlHttp = 'http://pdx-col.eum-appdynamics.com';
+            config.beaconUrlHttps = 'https://pdx-col.eum-appdynamics.com';
+            config.xd = {
+                enable: true
+            };
+        })(window['adrum-config'] || (window['adrum-config'] = {}));
+    </script>
+    <script src='//cdn.appdynamics.com/adrum/adrum-20.3.0.3009.js'></script>
+
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="text/html; charset=utf-8">
+    <meta content="yes" name="mobile-web-app-capable">
+
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/css/swiper.css">
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+    <div class="floating-chat">
+        <div class="ask">
+            ask mira <i class="fa fa-comments" aria-hidden="true"></i>
+        </div>
+
+        <div class="chat">
+            <div class="container">
+                <div id="chatDetails">
+                    <div class="icon-bg" style="background-image: url(../static/css/images/mf-logo.jpg);"></div>
+                    <img class="icon" src="../static/css/images/mf-logo.jpg">
+                    <div style="float: right; display: inline-block">
+                        <div class="header">
+                            <button><i aria-hidden="true" class="fa fa-times-circle" onclick="resetHome()"
+                                   style="font-size:18px;color:#666666"></i></button>
+                        </div>
+                    </div>
+                    <div class="title">
+                        Mira
+                    </div>
+                    <div class="sub-title">
+                        Your virtual assistant
+                    </div>
+                </div>
+                <!--  dont take inline styles-->
+                <div class="message-icons live-chat" id="chatBotMainContainer">
+
+                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>
+
+                    <!-- BANNER SLIDER INCLUDED HERE -->
+
+                    <div class="hi" style="z-index: 10000; display: block; position: sticky; top: 0;">
+                        <!-- Slideshow container -->
+                        <div class="slideshow-container">
+
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                                <a href="https://online.manappuram.com/eservice.aspx" target="_blank" style="width: 100%; display:block; text-decoration:none; text-align:center; padding: 8px 0px;background: #ffc603;border: 0;outline: none;border-radius: 5px;font-weight: normal;font-size: 15px;color: #030303;">Pay Gold Loan Interest Now</a>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <a href="https://www.manappuram.com/doorstep/" target="_blank" style="width: 100%; display:block; text-decoration:none; text-align:center; padding: 8px 0px;background: #ffc603;border: 0;outline: none;border-radius: 5px;font-weight: normal;font-size: 15px;color: #030303;">Instant Doorstep Gold Loan | Apply</a>
+                            </div>
+
+
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+<div class="typingdiv" id="typing" style="/* display:none; */">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                        <!-- The dots/circles -->
+                        <!-- <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span>
+                      <span class="dot" onclick="currentSlide(2)"></span>
+                    </div> -->
+                    </div>
+
+                    <!-- BANNER SLIDER ENDS HERE -->
+                </div>
+            </div>
+            <div class="footer">
+                <div class="text-box" contenteditable="true" style="display:none; visibility:hidden"></div>
+                <!--  <button style="visibility:hidden" id="sendMessage">send</button>-->
+                <div class="send-input">
+                    <div class="type-area">
+                        <!-- <form id="mmmChatForm">-->
+                        <input autocomplete="off" class="form-control input-lg input auto-complete" id="chatInput" placeholder="Say or Type your message ..." type="text" name="chatInput">
+                        <!--  </form>-->
+                        <div class="action-btn">
+                            <div class="send-button  waves waves-light">
+                            </div>
+                            <div class="mic-button">
+                                <div class="circle_ripple"></div>
+                                <div class="circle_ripple-2"></div>
+                                <i class="fa fa-microphone waves waves-light" aria-hidden="true" title="Voice Search" onclick="resetHome1()"></i>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="input-actions">
+                        <div class="clearfix"></div>
+                        <div style="float: right; display: inline-block">
+                            <i class="fa fa-paperclip attach">
+                            <form id="fileForm" class="uploadForm" method="post" enctype="multipart/form-data"
+                                  target="upload_target">
+                                <input type="file" title="Upload file" name="images" id="chatFile">
+                                <input type="hidden" name="botID" value="">
+                            </form>
+                        </i>
+
+                            <i aria-hidden="true" class="fa fa-language" title="Change Language" onclick="changeLanguage()"></i>
+
+                            <i class="fa fa-home" title="Main menu" onclick="resetHome()"></i>
+                            <i class="fa fa-microphone waves waves-light" aria-hidden="true" title="Voice Search" id="start-btn"></i>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom close">
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../static/js/swiper.min.js"></script>
+    <script src="../static/js/chatbot.js"></script>
+    <script src="../static/js/chatui.js"></script>
+    <script src="../static/js/platform.js"></script>
+    <script src="../static/js/js.cookie.min.js"></script>
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>
